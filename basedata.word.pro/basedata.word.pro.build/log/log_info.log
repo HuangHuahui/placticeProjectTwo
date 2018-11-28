@@ -1,0 +1,14 @@
+===2018-11-28 15:42:23.867 INFO  org.basedata.word.pro.build.Application Line:25  - This is an info message
+===2018-11-28 15:42:24.065 INFO  org.basedata.word.pro.build.Application Line:25  - This is an info message
+===2018-11-28 15:42:24.348 INFO  org.basedata.word.pro.build.Application Line:48  - Starting Application on ISS013001000307 with PID 8860 (E:\work\productWorkspace\devWorkspace\basedata.word.pro\basedata.word.pro.build\target\classes started by issuser in E:\work\productWorkspace\devWorkspace\basedata.word.pro\basedata.word.pro.build)
+===2018-11-28 15:42:24.348 INFO  org.basedata.word.pro.build.Application Line:593 - No active profile set, falling back to default profiles: default
+===2018-11-28 15:42:26.380 INFO  org.apache.catalina.core.StandardService Line:180 - Starting service [Tomcat]
+===2018-11-28 15:42:26.382 INFO  org.apache.catalina.core.StandardEngine Line:180 - Starting Servlet Engine: Apache Tomcat/8.5.27
+===2018-11-28 15:42:26.460 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:180 - Initializing Spring embedded WebApplicationContext
+===2018-11-28 15:42:29.697 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:120 - Context refreshed
+===2018-11-28 15:42:29.740 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:123 - Found 1 custom documentation plugin(s)
+===2018-11-28 15:42:29.752 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:41  - Scanning for api listing references
+===2018-11-28 15:42:29.935 INFO  org.apache.coyote.http11.Http11NioProtocol Line:180 - Initializing ProtocolHandler ["http-nio-11270"]
+===2018-11-28 15:42:29.964 INFO  org.apache.coyote.http11.Http11NioProtocol Line:180 - Starting ProtocolHandler ["http-nio-11270"]
+===2018-11-28 15:42:30.021 INFO  org.apache.tomcat.util.net.NioSelectorPool Line:180 - Using a shared selector for servlet write/read
+===2018-11-28 15:42:30.052 INFO  org.basedata.word.pro.build.Application Line:57  - Started Application in 5.978 seconds (JVM running for 6.659)

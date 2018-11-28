@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.basedata.word.pro.build.dao.mapper.ISchemaTablesMapper" >
+  <resultMap id="BaseResultMap" type="org.basedata.word.pro.build.pojo.SchemaTables" >
+    <result column="table_Schema" property="tableSchema" jdbcType="VARCHAR" />
+    <result column="table_Name" property="tableName" jdbcType="VARCHAR" />
+    <result column="table_Type" property="tableType" jdbcType="VARCHAR" />
+    <result column="table_Comment" property="tableComment" jdbcType="VARCHAR" />
+    <collection property="columnList" column="table_Name" select="selectColumnsList"></collection>
+  </resultMap>
+  <sql id="SchemaTables_List" >
+    table_Schema,table_Name,table_Type,table_Comment
+  </sql>
+  
+  <select id="queryTables" resultMap="BaseResultMap" parameterType="org.basedata.word.pro.build.pojo.SchemaTables">
+  	SELECT 
+  	<include refid="SchemaTables_List" />
+  	FROM INFORMATION_SCHEMA.TABLES
+  	WHERE 
+  		table_schema=#{tableSchema}
+  		AND table_type=#{tableType}
+  </select>
+  
+  <resultMap id="BaseResultMapSchemaColumns" type="org.basedata.word.pro.build.pojo.SchemaColumns" >
+    <result column="table_Schema" property="tableSchema" jdbcType="VARCHAR" />
+    <result column="table_Name" property="tableName" jdbcType="VARCHAR" />
+    <result column="column_Name" property="columnName" jdbcType="VARCHAR" />
+    <result column="column_Comment" property="columnComment" jdbcType="VARCHAR" />
+    <result column="column_Type" property="columnType" jdbcType="VARCHAR" />
+    <result column="column_Default" property="columnDefault" jdbcType="VARCHAR" />
+    <result column="is_Nullable" property="isNullable" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="SchemaColumns_List" >
+    column_Name,column_Comment,column_Type,column_Default,is_Nullable
+  </sql>
+  
+  <select id="selectColumnsList" resultMap="BaseResultMapSchemaColumns" >
+  	SELECT 
+  	<include refid="SchemaColumns_List" />
+  	FROM INFORMATION_SCHEMA.COLUMNS
+  	WHERE 
+<!--   		table_Schema=#{tableSchema} -->
+<!--   		AND  -->
+  		table_name=#{tableName}
+  </select>
+  
+</mapper>

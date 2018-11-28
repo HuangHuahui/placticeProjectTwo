@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.basedata.word.pro.build.dao.mapper.ISchemaColumnsMapper" >
+  <resultMap id="BaseResultMap" type="org.basedata.word.pro.build.pojo.SchemaColumns" >
+    <result column="table_Schema" property="tableSchema" jdbcType="VARCHAR" />
+    <result column="table_Name" property="tableName" jdbcType="VARCHAR" />
+    <result column="column_Name" property="columnName" jdbcType="VARCHAR" />
+    <result column="column_Comment" property="columnComment" jdbcType="VARCHAR" />
+    <result column="column_Type" property="columnType" jdbcType="VARCHAR" />
+    <result column="column_Default" property="columnDefault" jdbcType="VARCHAR" />
+    <result column="is_Nullable" property="isNullable" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    column_Name,column_Comment,column_Type,column_Default,is_Nullable
+  </sql>
+  
+  <select id="queryColumns" resultMap="BaseResultMap" parameterType="org.basedata.word.pro.build.pojo.SchemaColumns">
+  	SELECT 
+  	<include refid="Base_Column_List" />
+  	FROM INFORMATION_SCHEMA.COLUMNS
+  	WHERE 
+  		table_Schema=#{tableSchema}
+  		AND table_name=#{tableName}
+  </select>
+  
+</mapper>
